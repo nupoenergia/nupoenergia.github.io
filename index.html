@@ -1,11 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt_BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nupo Energia</title>
+    <title>NUPO Engenharia</title>
+    <meta
+      name="description"
+      content="Soluções reais, práticas e inteligentes, que vão ajudar sua empresa alcançar os melhores resultados."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <h1>Nupo Energia</h1>
+    <section class="header">
+      <div class="header-topbar">
+        <div class="header-logo">
+          <img src="assets/logo-1.svg" alt="NUPO Engenharia" />
+        </div>
+        <div>
+          <nav>
+            <ul class="header-menu">
+              <li>
+                <a href="#sobre">Conheça a <span class="fonte-caixa-alta">NUPO</span> </a>
+              </li>
+              <li>
+                <a href="#servicos">Serviços</a>
+              </li>
+              <li>
+                <a href="#contato">Contato</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header-content">
+        <div class="animate__animated animate__slideInLeft">
+          <p class="text-destaque">
+            A <span class="fonte-caixa-alta">NUPO</span> é a ajuda que faltava para sua empresa
+            economizar na conta de energia.
+          </p>
+          <p>
+            Soluções reais, práticas e inteligentes, que vão ajudar sua empresa alcançar os melhores
+            resultados.
+          </p>
+          <div>
+            <a href="#contato" class="botao">Fale com a NUPO</a>
+          </div>
+        </div>
+        <img
+          class="art1 animate__animated animate__slideInRight"
+          src="assets/background-1.png"
+          alt=""
+        />
+      </div>
+    </section>
+    <section class="sobre" id="sobre">
+      <img class="art2" src="assets/background-2.png" alt="" />
+      <div class="sobre-content">
+        <h2>Sobre a NUPO</h2>
+        <h3>Vamos conversar sobre a sua Energia?</h3>
+        <p>
+          No Brasil, milhares de pequenas e médias empresas sofrem com a necessidade de serem mais
+          eficientes e apresentarem melhores resultados em um ambiente que está sempre disposto a
+          cobrar as maiores tarifas dando em contrapartida os piores serviços.
+        </p>
+        <p>
+          Pensando nisso, a <span class="fonte-com-fundo">NUPO</span> surgiu, com uma equipe de
+          profissionais altamente capacitados e com
+          <span class="fonte-com-fundo">ampla experiência</span>, para ajudar você a reduzir custo
+          em toda a cadeia de energia elétrica do seu empreendimento.
+        </p>
+        <p>
+          Estamos aqui para te apresentar soluções personalizadas para o seu negócio que realmente
+          vão ajudar a
+          <span class="fonte-com-fundo">reduzir o custo</span> da sua conta de energia elétrica,
+          enquanto você se concentra no que realmente importa.
+        </p>
+      </div>
+    </section>
+    <section id="servicos" class="servicos">
+      <div class="servicos-content">
+        <h2>Algumas das nossas soluções que podem ajudar sua empresa</h2>
+        <ul>
+          <li>
+            Consultoria, gestão e migração para o
+            <span class="fonte-com-fundo">Mercado Livre de Energia</span>
+          </li>
+          <li>Consultoria em compra de energia elétrica</li>
+          <li>Projetos em modalidade tarifária</li>
+          <li>Projetos em <span class="fonte-com-fundo">perfil de consumo</span> do seu negócio</li>
+          <li>Projetos em adequação de demanda de energia</li>
+          <li>Projetos em consumo e demanda reativa</li>
+          <li>
+            <span class="fonte-com-fundo">Estudos personalizados</span> do setor de energia elétrica
+          </li>
+          <li>E muitos outros.</li>
+        </ul>
+      </div>
+      <img class="art2" src="assets/background-3.png" alt="" />
+    </section>
+    <section class="contato" id="contato">
+      <h2>Estamos onde você estiver, mas você pode encontrar a gente aqui:</h2>
+      <p>Av. Lins de Vasconcelos, 2570 - Vila Mariana</p>
+      <p>São Paulo, SP - 04112 - 001</p>
+      <p class="texto-especial"></p>
+      <div>
+        <a href="#contato" class="botao botaoFormContato">Deixe um recado ;)</a>
+      </div>
+
+      <iframe
+        id="formContato"
+        style="display: none"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSciMV4fynTucvtcg6gl85hOJ1tITFQyZcYXGQ7knwGs3tu9sA/viewform?embedded=true"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        marginheight="10"
+        marginwidth="10"
+        >Loading…</iframe
+      >
+    </section>
+
+    <script>
+      (function () {
+        const telefone = ["+55 11 ", "95029", " - ", "1618"].join("");
+        const email = ["comercial", "@", "nupoenergia", ".com.br"].join("");
+        const dadosDeContato = document.querySelector(".contato p.texto-especial");
+        dadosDeContato.innerHTML = `<a href="tel:${Array.from(telefone)
+          .filter((w) => w != " " && w != "-")
+          .join("")}">${telefone}</a> | <a href="mailto:${email}">${email}</a>`;
+
+        const botaoFormContato = document.querySelector(".botaoFormContato");
+        const formContato = document.querySelector("#formContato");
+
+        botaoFormContato.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          if (formContato.style.display == "none") {
+            formContato.style.display = "block";
+            formContato.classList.add("animate__animated");
+            formContato.classList.add("animate__fadeInUpBig");
+          } else {
+            formContato.style.display = "none";
+            formContato.classList = [];
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
